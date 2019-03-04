@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>Car controls</title>
+	<meta charset="utf-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style>
+		div {
+			height: 99px;
+			width: 99px;
+			text-align: center;
+			vertical-align: center;
+		}
+		.arrow {
+			cursor: pointer;
+		}
+		#left-arrow {
+			position: absolute;
+			left: calc(75% - 150px);
+		}
+		#right-arrow {
+			position: absolute;
+			left: calc(75% + 50px);
+		}
+		#fwd-arrow {
+			position: absolute;
+			top: calc(50% - 150px);
+		}
+		#rev-arrow {
+			position: absolute;
+			top: calc(50% + 50px);
+		}
+		#fwd-arrow, #rev-arrow {
+			left: calc(75% - 50px);
+		}
+		#left-arrow, #right-arrow {
+			top: calc(50% - 50px);
+		}
+	</style>
+	<script>
+		$( document ).ready(function(){
+			$("#rev-arrow").on("mousedown", function() {
+	   		$.get('/back');
+			}).on('mouseup', function() {
+			   $.get('/stop');
+			});
+			$("#fwd-arrow").on("mousedown", function() {
+			   $.get('/fwd');
+			}).on('mouseup', function() {
+			   $.get('/stop');
+			});
+			$("#left-arrow").on("mousedown", function() {
+			   $.get('/left');
+			}).on('mouseup', function() {
+			   $.get('/stop');
+			});
+			$("#right-arrow").on("mousedown", function() {
+			   $.get('/right');
+			}).on('mouseup', function() {
+			   $.get('/stop');
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="http://192.168.2.69:8081/"/>
+	<div id = "left-arrow" class = "arrow">←</div>
+	<div id = "right-arrow" class = "arrow">→</div>
+	<div id = "fwd-arrow" class = "arrow">↑</div>
+	<div id = "rev-arrow" class = "arrow">↓</div>
+</body>
+</html>
