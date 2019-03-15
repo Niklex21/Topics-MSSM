@@ -33,14 +33,35 @@
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 
-void operatorControl() {
-	for (int i = 0; i < 10; ++i)
-	{
-		fputc(i, uart2);
-		delay(100);
+void opcontrol() {
+	fputs("im", stdout);
+	//Robot robot = Robot();
+
+	fputs("im here", stdout);
+
+	char inputS;
+	while (true){
+		inputS = fgetc(uart2);
+		Direction direction;
+
+		switch (inputS) {
+			case 'l': direction = left;
+								break;
+			case 'r': direction = right;
+								break;
+			case 'f': direction = forward;
+								break;
+			case 'b': direction = back;
+								break;
+			default:  direction = stop;
+						    break;
+			//robot.move(direction, 100);
+		}
+		fputc(inputS, stdout);
+		//std::printf("%c", inputS[0]);
 	}
 
-	char inputS[20];
+	/*char inputS[20];
 	while (true){
 		fgets(inputS, 20, uart2);
 		char d = inputS[0];
@@ -57,8 +78,9 @@ void operatorControl() {
 								break;
 			case 'b': direction = back;
 								break;
-		}
+			default:  direction = stop;
+						    break;
+		}*/
 
-		robot.move(direction, speed);
+		//robot.move(direction, speed);
 	}
-}

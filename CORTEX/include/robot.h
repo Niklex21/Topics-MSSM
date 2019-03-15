@@ -8,7 +8,7 @@
 class Robot {
 public:
   Robot();
-  DriveChain driveChain = DriveChain(1, 2);
+  DriveChain driveChain = DriveChain(2, 3);
 
   void move(Direction direction, int speed);
 };

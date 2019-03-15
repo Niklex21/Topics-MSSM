@@ -8,7 +8,6 @@
  */
 
 #include "main.h"
-#include "robot.h"
 
 /*
  * Runs pre-initialization code. This function will be started in kernel mode one time while the
@@ -36,5 +35,4 @@
  * can be implemented in this task if desired.
  */
 void initialize() {
-  Robot robot = Robot();
 }

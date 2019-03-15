@@ -5,7 +5,8 @@ enum Direction {
     left,
     right,
     forward,
-    back
+    back,
+    stop
 };
 
 #endif

@@ -1,8 +1,6 @@
 #include "main.h"
 #include "driveChain.h"
-#include "motor.h"
 #include "direction.h"
-#include "robot.h"
 
 DriveChain::DriveChain(int channel1, int channel2) {
   leftMotor = Motor(channel1);
@@ -26,6 +24,10 @@ void DriveChain::move(Direction direction, int speed) {
     case back:
       this->leftMotor.move(-speed);
       this->rightMotor.move(-speed);
+      break;
+    default:
+      this->leftMotor.move(0);
+      this->rightMotor.move(0);
       break;
   }
 }
