@@ -1,13 +1,19 @@
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(115200);
+  Serial.begin(9600);
   pinMode(1, OUTPUT);
-  pinMode(0, INPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-
-  Serial.println("f");
+  Serial.write(1);
+  delay(1000);
+  Serial.write(2);
+  delay(1000);
+  Serial.write(3);
+  delay(1000);
+  Serial.write(4);
+  delay(1000);
+  Serial.write(5);
   delay(1000);
 }

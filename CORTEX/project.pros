@@ -1,7 +1,7 @@
 {
     "py/object": "pros.conductor.project.Project",
     "py/state": {
-        "project_name": "CORTEX",
+        "project_name": "CORTEX2",
         "target": "cortex",
         "templates": {
             "kernel": {
