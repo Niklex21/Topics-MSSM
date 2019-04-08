@@ -35,6 +35,11 @@
 		#left-arrow, #right-arrow {
 			top: calc(50% - 50px);
 		}
+		#debug_box {
+			position: absolute;
+			top: 500px;
+			left: 20px;
+		}
 	</style>
 	<script>
 		$( document ).ready(function(){
@@ -58,14 +63,33 @@
 			}).on('mouseup', function() {
 			   $.get('/stop');
 			});
+			$(document).keydown(function(event){
+				if (event.which == 87 || event.which == 38) {
+					$.get('/fwd');
+				}
+				else if (event.which == 65 || event.which == 37){
+					$.get('/left');
+				}
+				else if (event.which == 83 || event.which == 40){
+					$.get('/back');
+				}
+				else if (event.which == 68 || event.which == 39){
+					$.get('/right');
+				}
+			});
+			$(document).keyup(function(event){
+				if ([87, 65, 83, 68, 39, 40, 37, 38].indexOf(event.which) != -1)
+					$.get('/stop');
+			});
 		});
 	</script>
 </head>
 <body>
-	<img src="http://192.168.2.69:8081/"/>
+	<!---<img src="http://192.168.2.69:8081/"/>--->
 	<div id = "left-arrow" class = "arrow">←</div>
 	<div id = "right-arrow" class = "arrow">→</div>
 	<div id = "fwd-arrow" class = "arrow">↑</div>
 	<div id = "rev-arrow" class = "arrow">↓</div>
+	<div id = "debug_box"><span>{{func_name}}</span></div>
 </body>
 </html>
