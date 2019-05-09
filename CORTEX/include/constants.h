@@ -2,7 +2,7 @@
 #define _CONSTANTS_H
 
 // Motor port declarations
-int rightMotor = 2;
-int leftMotor = 3;
+int rightMotor = 3;
+int leftMotor = 2;
 
 #endif

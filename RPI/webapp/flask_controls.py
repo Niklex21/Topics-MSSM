@@ -20,12 +20,12 @@ def left():
 
 @app.route('/right')
 def right():
-        serialCortex.write(bytes([1]))
+        serialCortex.write(bytes([2]))
         return render_template('index.html', func_name = 'right')
 
 @app.route('/fwd')
 def fwd():
-        serialCortex.write(bytes([2]))
+        serialCortex.write(bytes([1]))
         return render_template('index.html', func_name = 'fwd')
 
 @app.route('/back')

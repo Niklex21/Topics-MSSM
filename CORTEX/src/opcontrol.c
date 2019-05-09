@@ -32,20 +32,20 @@ void operatorControl() {
 		int ch = fgetc(uart2); // d, where d is direction (1..4),
 
 		int direction = ch;
-		int speed = 100;
+		int speed = 127;
 
 		switch (ch) {
 			case 1:
 				moveForward(speed);
 				break;
 			case 2:
-				turnLeft(speed);
+				turnRight(speed/3);
 				break;
 			case 3:
-				turnRight(speed);
+				moveBack(speed);
 				break;
 			case 4:
-				moveBack(speed);
+				turnLeft(speed/3);
 				break;
 			default:
 				moveForward(0); // stop
